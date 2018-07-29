@@ -1,0 +1,4 @@
+---
+
+- name: collecte des informations
+  shell: "while read l; do [[ -n $l && ${l###} = $l ]] && ssh-keygen -l -f /dev/stdin <<<$l; done < /home/{{ sshuser }}/.ssh/authorized_keys"
